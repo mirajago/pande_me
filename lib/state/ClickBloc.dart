@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:yaml/yaml.dart';
 
@@ -8,7 +9,7 @@ enum ClickEvent {
 var globalNews = loadYaml('''
 events:
   - conditions:
-      minInfected: 60
+      minInfected: 2
       minTime: 60
     text: Open schools again?
     actions:
@@ -20,16 +21,44 @@ events:
           infect: -50
     ''');
 
+
 class ClickState {
 
   int infected;
 
   var news = globalNews;
 
+  var firedEvents = new List();
+
   var activeNewsEvent;
 
   ClickState(this.infected) {
-    activeNewsEvent = this.news["events"]
+
+    var toFireEventList = getEventsToFire();
+
+    if(toFireEventList.isNotEmpty){
+      activeNewsEvent = toFireEventList.first();
+    }
+  }
+
+  void fireEvent(){
+
+  }
+
+
+  List getEventsToFire(){
+    var eventList = new List();
+    for(var event in news['events']) {
+      var minInfected = event['conditions']['minInfected'];
+      if(
+        minInfected <= infected
+        && firedEvents.contains(event)
+      ) {
+        eventList.add(event);
+      }
+
+    }
+    return eventList;
   }
 
   increment() => new ClickState(infected + 1);

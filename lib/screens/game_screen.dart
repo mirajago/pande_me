@@ -14,11 +14,18 @@ class GameScreen extends StatelessWidget {
 
       body: BlocBuilder<ClickBloc, ClickState>(
 
-        builder: (context, state) => Center(
-          child: RaisedButton(
-            onPressed: () => clickBloc.add(ClickEvent.click),
-            child: Text("${state.infected} Infected People"),
-          ),
+        builder: (context, state) => Stack(
+          children: [
+            Text("${state.activeNewsEvent}"),
+            Center(
+              child: RaisedButton(
+                onPressed: () => clickBloc.add(ClickEvent.click),
+                child: Text("${state.infected} Infected People"),
+              ),
+            ),
+
+
+          ],
         ),
       ),
     );
