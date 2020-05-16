@@ -16,7 +16,7 @@ void signOutFirebase() async {
   await firebaseAuth.signOut();
 }
 
-Future<String> signIn() async {
+Future<String> signInWithGoogle() async {
   final GoogleSignInAccount googleSignInAccount = await googleSignIn.signIn();
   final GoogleSignInAuthentication googleSignInAuthentication =
       await googleSignInAccount.authentication;

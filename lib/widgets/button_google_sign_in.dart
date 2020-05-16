@@ -16,7 +16,7 @@ class GoogleLoginButton extends StatelessWidget {
       onPressed: () {
         print("GoogleLoginButton pressed.");
 
-        signIn().whenComplete(() {
+        signInWithGoogle().whenComplete(() {
           Navigator.of(context).push(MaterialPageRoute(
               builder: (context) {
                 //TODO: Return the page for  when the user signed in.
