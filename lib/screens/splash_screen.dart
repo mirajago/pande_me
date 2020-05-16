@@ -10,6 +10,9 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+
+  var animationName = "Untitled";
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
