@@ -14,14 +14,48 @@ class _AccountScreenState extends State<AccountScreen> {
       appBar: AppbarWidget(),
       body: Container(
           width: MediaQuery.of(context).size.width,
-          color: colors.black,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Container(
-                  color: colors.purpurRot,
-                  child: Text("Account")),
-            ],
+          color: colors.giftGruen,
+          child: Center(
+            child: Container(
+              height: 200,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  Text("Me @ PandeME", style: TextStyle(color: colors.black, fontSize: 25, fontWeight: FontWeight.bold)),
+                  Container(
+                    height: 120,
+                    width:  MediaQuery.of(context).size.width * 0.7,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: <Widget>[
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: <Widget>[
+                            Text("Name >> ", style: TextStyle(color: colors.black, fontSize: 20, fontWeight: FontWeight.bold)),
+                            Text("Maxine Muster", style: TextStyle(color: colors.black, fontSize: 20, fontWeight: FontWeight.bold))
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: <Widget>[
+                            Text("Email >> ", style: TextStyle(color: colors.black, fontSize: 20, fontWeight: FontWeight.bold)),
+                            Text("maxine@gmail.com", style: TextStyle(color: colors.black, fontSize: 20, fontWeight: FontWeight.bold))
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: <Widget>[
+                            Text("Password >> ", style: TextStyle(color: colors.black, fontSize: 20, fontWeight: FontWeight.bold)),
+                            Text("***********", style: TextStyle(color: colors.black, fontSize: 20, fontWeight: FontWeight.bold))
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
           )
       ),
     );
