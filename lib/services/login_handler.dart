@@ -4,6 +4,14 @@ import 'package:google_sign_in/google_sign_in.dart';
 final GoogleSignIn _googleSignIn = GoogleSignIn();
 final FirebaseAuth _auth = FirebaseAuth.instance;
 
+Future registerWithEmailAndPassword(String mail, String password) async {
+  try {
+    AuthResult result = await _auth.createUserWithEmailAndPassword(
+        email: mail, password: password);
+    FirebaseUser user = result.user;
+  } catch (e) {}
+}
+
 Future<FirebaseUser> handleSignIn() async {
   final GoogleSignInAccount googleUser = await _googleSignIn.signIn();
   final GoogleSignInAuthentication googleAuth = await googleUser.authentication;
