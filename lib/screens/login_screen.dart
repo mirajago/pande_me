@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:pandeme/widgets/button_google_sign_in.dart';
 
 
 class LoginPageScaffold extends StatelessWidget {
@@ -32,28 +33,3 @@ class LoginPageColumnWidget extends StatelessWidget {
   }
 }
 
-class GoogleLoginButton extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialButton(
-      child: Text("Login With Google"),
-      color: Colors.blue,
-      textColor: Colors.white,
-      elevation: 2,
-      shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10)
-      ),
-      onPressed: (){
-        print("GoogleLoginButton pressed.");
-
-        signIn().whenComplete((){
-          Navigator.of(context).push(MaterialPageRoute(
-              builder: (context){
-                //TODO: Return route for when the user has successfully signed in.
-              }
-          ));
-        });
-      },
-    );
-  }
-}
