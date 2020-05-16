@@ -16,7 +16,7 @@ class GameScreen extends StatelessWidget {
 
         builder: (context, state) => Stack(
           children: [
-            Text("${state.activeNewsEvent}"),
+            Text("${state.activeNewsEvent != null ? state.activeNewsEvent["text"] : ""}"),
             Center(
               child: RaisedButton(
                 onPressed: () => clickBloc.add(ClickEvent.click),

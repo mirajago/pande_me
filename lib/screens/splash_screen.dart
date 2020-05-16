@@ -21,6 +21,7 @@ class _SplashScreenState extends State<SplashScreen> {
         alignment: Alignment.center,
         fit: BoxFit.cover,
         callback: _startApp,
+        animation: "Untitled",
       ),
     );
   }

@@ -37,7 +37,7 @@ class ClickState {
     var toFireEventList = getEventsToFire();
 
     if(toFireEventList.isNotEmpty){
-      activeNewsEvent = toFireEventList.first();
+      activeNewsEvent = toFireEventList[0];
     }
   }
 
@@ -52,7 +52,7 @@ class ClickState {
       var minInfected = event['conditions']['minInfected'];
       if(
         minInfected <= infected
-        && firedEvents.contains(event)
+        && !firedEvents.contains(event)
       ) {
         eventList.add(event);
       }
