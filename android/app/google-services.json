@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "170251364915",
+    "firebase_url": "https://pande-me.firebaseio.com",
+    "project_id": "pande-me",
+    "storage_bucket": "pande-me.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:170251364915:android:8d5a4ae0cfbaf4fb579146",
+        "android_client_info": {
+          "package_name": "com.cuckoocoding.pandeme"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "170251364915-o5bm5ib2osff0dhu4na895vfah89tfm2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLBXF9ws7QB4ZVc58UK2oDic1cTG8YmZU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "170251364915-o5bm5ib2osff0dhu4na895vfah89tfm2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
+import 'services/login_handler.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
-
-  //Test
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -104,7 +104,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
+        onPressed: handleSignIn,
         tooltip: 'Increment',
         child: Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
