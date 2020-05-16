@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:pandeme/services/login_handler.dart';
 import 'package:pandeme/widgets/appbar_widget.dart';
 import 'package:pandeme/helpers/colors.dart' as colors;
 
@@ -9,89 +8,55 @@ class AccountScreen extends StatefulWidget {
 }
 
 class _AccountScreenState extends State<AccountScreen> {
-  bool _registerMode = true;
-  void _register() {
-    if (pwController.text == rpwController.text) {
-      registerWithEmailAndPassword(mailController.text, pwController.text);
-    }
-  }
-
-  void _signIn() {
-    signIn(mailController.text, pwController.text)
-        .then((user) => print(user.mail + " logged in"));
-  }
-
-  void switchToSignIn() {}
-
-  final mailController = TextEditingController();
-  final pwController = TextEditingController();
-  final rpwController = TextEditingController();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppbarWidget(),
       body: Container(
-        width: MediaQuery.of(context).size.width,
-        color: colors.white,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            _registerMode ? Text("Registering") : Text("Sign In"),
-            TextField(
-              controller: mailController,
-              decoration: InputDecoration(
-                labelText: 'Email',
-              ),
-            ),
-            TextField(
-              controller: pwController,
-              obscureText: true,
-              decoration: InputDecoration(
-                labelText: 'Password',
-              ),
-            ),
-            _registerMode
-                ? Column(children: <Widget>[
-                    TextField(
-                      controller: pwController,
-                      obscureText: true,
-                      decoration: InputDecoration(
-                        labelText: 'Repeat Password',
-                      ),
-                    ),
-                    RaisedButton(
-                      onPressed: _register,
-                      child: Text("Register"),
-                    ),
-                    FlatButton(
-                        child: Text("Already have an account?"),
-                        onPressed: () {
-                          setState(() {
-                            _registerMode = false;
-                          });
-                        })
-                  ])
-                : Column(
-                    children: <Widget>[
-                      RaisedButton(
-                        onPressed: _signIn,
-                        child: Text("Sign In"),
-                      ),
-                      FlatButton(
-                        onPressed: () {
-                          setState(() {
-                            _registerMode = true;
-                          });
-                        },
-                        child: Text(
-                          ("Don't have an account?"),
+          width: MediaQuery.of(context).size.width,
+          color: colors.giftGruen,
+          child: Center(
+            child: Container(
+              height: 200,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  Text("Me @ PandeME", style: TextStyle(color: colors.black, fontSize: 25, fontWeight: FontWeight.w700)),
+                  Container(
+                    height: 120,
+                    width:  MediaQuery.of(context).size.width * 0.7,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: <Widget>[
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: <Widget>[
+                            Text("Name >> ", style: TextStyle(color: colors.black, fontSize: 20, fontWeight: FontWeight.bold)),
+                            Text("Maxine Muster", style: TextStyle(color: colors.black, fontSize: 20, fontWeight: FontWeight.bold))
+                          ],
                         ),
-                      ),
-                    ],
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: <Widget>[
+                            Text("Email >> ", style: TextStyle(color: colors.black, fontSize: 20, fontWeight: FontWeight.bold)),
+                            Text("maxine@gmail.com", style: TextStyle(color: colors.black, fontSize: 20, fontWeight: FontWeight.bold))
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: <Widget>[
+                            Text("Password >> ", style: TextStyle(color: colors.black, fontSize: 20, fontWeight: FontWeight.bold)),
+                            Text("***********", style: TextStyle(color: colors.black, fontSize: 20, fontWeight: FontWeight.bold))
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
-          ],
-        ),
+                ],
+              ),
+            ),
+          )
       ),
     );
   }

@@ -8,7 +8,7 @@ class AppbarWidget extends StatelessWidget with PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-            backgroundColor: colors.apfelGruen,
+            backgroundColor: colors.saeureGruen,
             automaticallyImplyLeading: false,
             title: Row(
               mainAxisAlignment: MainAxisAlignment.start,
@@ -25,7 +25,7 @@ class AppbarWidget extends StatelessWidget with PreferredSizeWidget {
                   child: Container(
                     height: 45,
                     child: Image.asset('assets/images/logo.png',
-                        fit: BoxFit.fill),
+                        color: colors.black, fit: BoxFit.fill),
                   ),
                 ),
               ],
@@ -33,7 +33,7 @@ class AppbarWidget extends StatelessWidget with PreferredSizeWidget {
             actions: <Widget>[
               Container(
                       child: IconButton(
-                        icon: Image.asset('assets/images/account.png'),
+                        icon: Image.asset('assets/images/account.png', color: colors.black),
                         iconSize: 36,
                         onPressed: () {
                           Navigator.push(
