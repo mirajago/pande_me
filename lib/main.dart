@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:pandeme/screens/account_screen.dart';
+import 'package:pandeme/screens/main_menu_screen.dart';
 
 import 'services/login_handler.dart';
 
@@ -22,7 +24,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MainMenuScreen(),
     );
   }
 }
