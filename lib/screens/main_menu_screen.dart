@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pandeme/widgets/appbar_widget.dart';
+import 'package:pandeme/helpers/colors.dart' as colors;
 
 
 class MainMenuScreen extends StatefulWidget {
@@ -13,12 +14,14 @@ class _MainMenuScreenState extends State<MainMenuScreen> {
     return Scaffold(
       appBar: AppbarWidget(),
       body: Container(
-          color: Colors.red,
+          width: MediaQuery.of(context).size.width,
+          color: colors.black,
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Container(
-                  color: Colors.blue,
-                  child: Text("Hey Screen")),
+                  color: colors.purpurRot,
+                  child: Text("Main Menu")),
             ],
           )
       ),
