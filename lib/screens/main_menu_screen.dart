@@ -24,7 +24,7 @@ class _MainMenuScreenState extends State<MainMenuScreen> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  Text("PandeME", style: TextStyle(color: colors.black, fontSize: 25, fontWeight: FontWeight.bold)),
+                  Text("PandeME", style: TextStyle(color: colors.black, fontSize: 25, fontWeight: FontWeight.w700)),
                   Container(
                     height: 120,
                     child: Column(

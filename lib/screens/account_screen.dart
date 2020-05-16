@@ -22,7 +22,7 @@ class _AccountScreenState extends State<AccountScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
-                  Text("Me @ PandeME", style: TextStyle(color: colors.black, fontSize: 25, fontWeight: FontWeight.bold)),
+                  Text("Me @ PandeME", style: TextStyle(color: colors.black, fontSize: 25, fontWeight: FontWeight.w700)),
                   Container(
                     height: 120,
                     width:  MediaQuery.of(context).size.width * 0.7,

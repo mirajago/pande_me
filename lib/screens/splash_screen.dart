@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flare_flutter/flare_actor.dart';
+import 'package:pandeme/screens/login_screen.dart';
 import 'main_menu_screen.dart';
 
 
@@ -19,7 +20,6 @@ class _SplashScreenState extends State<SplashScreen> {
         "assets/animations/animation.flr",
         alignment: Alignment.center,
         fit: BoxFit.cover,
-        animation: 'pandeme',
         callback: _startApp,
       ),
     );
@@ -29,7 +29,7 @@ class _SplashScreenState extends State<SplashScreen> {
     Navigator.push(
       context,
       MaterialPageRoute(
-          builder: (context) => MainMenuScreen()),
+          builder: (context) => LoginScreen()),
     );
   }
 
