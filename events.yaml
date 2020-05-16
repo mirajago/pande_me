@@ -1,0 +1,14 @@
+
+
+events:
+  - conditions:
+      minInfected: 60
+      minTime: 60
+    text: Open schools again?
+    actions:
+      - text: Yes
+        action:
+          infect: 1000
+      - text: No
+        action:
+          infect: -50
