@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:pandeme/utility_methods/google_sign_in_methods.dart';
 
 class GoogleLoginButton extends StatelessWidget {
   @override
@@ -25,3 +26,4 @@ class GoogleLoginButton extends StatelessWidget {
       },
     );
   }
+}
